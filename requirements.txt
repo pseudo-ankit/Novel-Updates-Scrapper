@@ -1,10 +1,13 @@
-beautifulsoup4 @ file:///tmp/build/80754af9/beautifulsoup4_1601924105527/work
+beautifulsoup4==4.9.3
 certifi==2021.10.8
 click==7.1.2
 Flask==1.1.2
 gunicorn==20.1.0
 itsdangerous==1.1.0
 Jinja2==2.11.2
-MarkupSafe @ file:///tmp/build/80754af9/markupsafe_1621523467000/work
-soupsieve @ file:///tmp/build/80754af9/soupsieve_1636706018808/work
+MarkupSafe==2.0.1
+pip==21.2.4
+setuptools==58.0.4
+soupsieve==2.3.1
 Werkzeug==1.0.1
+wheel==0.37.1
