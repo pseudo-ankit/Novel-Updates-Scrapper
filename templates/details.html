@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/details.css">
+    <title>NU Finder</title>
+  </head>
+  <body>
+ 
+    <div class="main">
+      <div class="details">
+        <div class="novel-info">
+        <img src={{novel_details.cover_url}} height="300px" width="200px" id="cover-image">
+        <div class="novel-discription">
+          <h1>{{novel_details.title}}</h1>
+          <div class="genre">
+            {% for genre in novel_details.genre %}
+            <h3>{{genre}}</h3>
+            {% endfor %}
+          </div>
+        <p>{{novel_details.discription}}</p>
+        </div>
+        </div>
+        <div class="comment">
+          <h1>Comments</h1>
+          <ul>
+            {% for comment in novel_details.comments %}
+            <li><p>{{comment}}</p></li>
+            {% endfor %}
+      </ul>
+      </div>
+      </ul>
+      </div>
+    </div>
+  </body>
+</html>

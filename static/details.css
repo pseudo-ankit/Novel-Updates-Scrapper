@@ -1,0 +1,108 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    /* width: 100vw;
+    height: 100vh; */
+    font-family: sans-serif;
+    color: white;
+    box-sizing: border-box;
+}
+
+.main{
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    background-image: url(./images/img-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: change 10s infinite ease-in-out;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    background-color: rgba(21, 22, 22, 0.7);
+    padding: 25px 10px;
+}
+
+.novel-info{
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid slategrey;
+}
+
+.novel-discription{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    flex: 0.9;
+}
+
+.novel-discription p{
+    font-size: 20px;
+}
+
+#cover-image{
+    border-radius: 25px;
+}
+
+.genre{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 20px;
+    width: 80%;
+}
+
+.comment h1{
+    border-bottom: 1px solid slategray;
+}
+
+.comment li{
+    text-align: left;
+}
+
+@keyframes change {
+    0%
+    {
+        background-image: url(./images/img-2.jpg);
+    }
+    20%
+    {
+        background-image: url(./images/img-3.jpg);
+    }
+    40%
+    {
+        background-image: url(./images/img-4.jpg);
+    }
+    60%
+    {
+        background-image: url(./images/img-5.jpg);
+    }
+    80%
+    {
+        background-image: url(./images/img-6.jpg);
+    }
+    100%
+    {
+        background-image: url(./images/img-2.jpg);
+    }
+}
+
