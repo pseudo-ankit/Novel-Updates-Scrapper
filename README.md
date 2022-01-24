@@ -59,9 +59,9 @@ Navigate to the url provided in the terminal and you should be able to access th
 
 After cloning the repo the file structure should be like below.
 ```bash
-```
-```
 $ ls
+```
+```
 
 Novel-Updates-Scrapper
 │   README.md
