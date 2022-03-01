@@ -42,23 +42,39 @@ class ScraperNovelUpdates:
 
 
     def __get_title(self) -> None:
-        self.title = self.page_soup.find('div', {'class':'seriestitlenu'}).text
+        try:
+            self.title = self.page_soup.find('div', {'class':'seriestitlenu'}).text
+        except:
+            self.title = "No Title"
     
     def __get_cover_url(self):
-        self.cover_url = self.page_soup.find('div', {'class':'seriesimg'}).img['src']
+        try:
+            self.cover_url = self.page_soup.find('div', {'class':'seriesimg'}).img['src']
+        except:
+            self.cover_url = "No Cover Image"
 
     def __get_discription(self):
-        self.discription = "\n".join(list(map(lambda x:x.text, 
-                            self.page_soup.find('div', {'id':'editdescription'}).find_all('p'))))
+        try:
+            self.discription = "\n".join(list(map(lambda x:x.text, 
+                                self.page_soup.find('div', {'id':'editdescription'}).find_all('p'))))
+        except:
+            self.discription = "No Description"
+                    
 
     def __get_genre(self):
-        self.genre = list(map(lambda x:x.text, 
-                    self.page_soup.find('div', {'id': 'seriesgenre'}).find_all('a')))
+        try:
+            self.genre = list(map(lambda x:x.text, 
+                        self.page_soup.find('div', {'id': 'seriesgenre'}).find_all('a')))
+        except:
+            self.genre = "No Genre"
 
     def __get_associated_names(self):
-        self.associated_names = str(self.page_soup.find('div', {'id':'editassociated'})).split('<br/>')
-        self.associated_names[0] = self.associated_names[0].split('>')[-1]
-        self.associated_names[-1] = self.associated_names[-1].split('</')[0]
+        try:
+            self.associated_names = str(self.page_soup.find('div', {'id':'editassociated'})).split('<br/>')
+            self.associated_names[0] = self.associated_names[0].split('>')[-1]
+            self.associated_names[-1] = self.associated_names[-1].split('</')[0]
+        except:
+            self.associated_names = "No Associated Name Found"
 
 
     def __get_comments_on_all_pages(self):
@@ -94,8 +110,11 @@ class ScraperNovelUpdates:
 
     def __get_comments_on_current_page(self, page_soup):
         
-        for comment in page_soup.find_all('div',{'class':'w-comments-item-text'}):
-            self.comments.append(self.__clean_comment(comment.text))
+        try:
+            for comment in page_soup.find_all('div',{'class':'w-comments-item-text'}):
+                self.comments.append(self.__clean_comment(comment.text))
+        except:
+            self.comments.append("No Comments Found")
 
     def __clean_comment(self, comment):
         comment = re.sub(' +', ' ', comment).split('\n')
